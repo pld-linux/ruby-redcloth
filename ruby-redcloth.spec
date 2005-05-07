@@ -15,7 +15,9 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-RedCloth is a module for using Textile in Ruby. Textile is a text format. A very simple text format. Another stab at making readable text that can be converted to HTML.
+RedCloth is a module for using Textile in Ruby. Textile is a text
+format. A very simple text format. Another stab at making readable
+text that can be converted to HTML.
 
 %prep
 %setup -q -n RedCloth-%{version}
