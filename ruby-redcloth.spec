@@ -11,7 +11,7 @@ Source0:	http://rubyforge.org/frs/download.php/6064/RedCloth-%{version}.tar.gz
 # Source0-md5:	6f076b94e783149adf96102c574a233c
 URL:		http://www.whytheluckystiff.net/ruby/redcloth/
 BuildRequires: setup.rb
-BuildRequires: perl
+BuildRequires: sed >= 4.0
 Requires:	ruby
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,6 +28,7 @@ czytelnego tekstu, który mo¿e byæ konwertowany do HTML-a.
 
 %prep
 %setup -q -n RedCloth-%{version}
+sed -i -e "s#/usr/bin/ruby18#/usr/bin/ruby#" bin/*
 
 %build
 cp %{_datadir}/setup.rb .
@@ -38,9 +39,6 @@ ruby setup.rb config \
 ruby setup.rb setup
 
 rdoc -o rdoc doc lib
-
-find bin -type f | xargs perl -pi -e "s#/usr/bin/ruby18#/usr/bin/ruby#"
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
