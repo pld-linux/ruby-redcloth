@@ -1,5 +1,3 @@
-%define		ruby_archdir	%(ruby -r rbconfig -e 'print Config::CONFIG["archdir"]')
-%define		ruby_rubylibdir	%(ruby -r rbconfig -e 'print Config::CONFIG["rubylibdir"]')
 Summary:	RedCloth - Textile Humane Web Text for Ruby
 Summary(pl):	RedCloth - obs³uga formatu tekstowego dla WWW Textile w jêzyku Ruby
 Name:		ruby-redcloth
@@ -10,8 +8,9 @@ Group:		Development/Languages
 Source0:	http://rubyforge.org/frs/download.php/6064/RedCloth-%{version}.tar.gz
 # Source0-md5:	6f076b94e783149adf96102c574a233c
 URL:		http://www.whytheluckystiff.net/ruby/redcloth/
-BuildRequires: setup.rb
-BuildRequires: sed >= 4.0
+BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	sed >= 4.0
+BuildRequires:	setup.rb
 Requires:	ruby
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,7 +27,7 @@ czytelnego tekstu, który mo¿e byæ konwertowany do HTML-a.
 
 %prep
 %setup -q -n RedCloth-%{version}
-sed -i -e "s#/usr/bin/ruby18#/usr/bin/ruby#" bin/*
+sed -i -e '1s,#!.*/bin/ruby18,#!%{_bindir}/ruby,' bin/*
 
 %build
 cp %{_datadir}/setup.rb .
