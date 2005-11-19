@@ -3,16 +3,17 @@
 Summary:	RedCloth - Textile Humane Web Text for Ruby
 Summary(pl):	RedCloth - obs³uga formatu tekstowego dla WWW Textile w jêzyku Ruby
 Name:		ruby-redcloth
-Version:	3.0.3
+Version:	3.0.4
 Release:	1
 License:	GPL
 Group:		Development/Languages
-Source0:	http://rubyforge.org/frs/download.php/2896/RedCloth-%{version}.tar.gz
-# Source0-md5:	eade83d4b1ecc2b415db5e33deb09e05
-Source1:	setup.rb
+Source0:	http://rubyforge.org/frs/download.php/6064/RedCloth-%{version}.tar.gz
+# Source0-md5:	6f076b94e783149adf96102c574a233c
 URL:		http://www.whytheluckystiff.net/ruby/redcloth/
+BuildRequires: setup.rb
+BuildRequires: perl
 Requires:	ruby
-BuildArch:	noarch
+#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,14 +30,17 @@ czytelnego tekstu, który mo¿e byæ konwertowany do HTML-a.
 %setup -q -n RedCloth-%{version}
 
 %build
-cp %{SOURCE1} .
+cp %{_datadir}/setup.rb .
 ruby setup.rb config \
-	--site-ruby=%{ruby_rubylibdir} \
-	--so-dir=%{ruby_archdir}
+	--rbdir=%{ruby_rubylibdir} \
+	--sodir=%{ruby_archdir}
 
 ruby setup.rb setup
 
 rdoc -o rdoc doc lib
+
+find bin -type f | xargs perl -pi -e "s#/usr/bin/ruby18#/usr/bin/ruby#"
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
