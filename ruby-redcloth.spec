@@ -2,7 +2,7 @@ Summary:	RedCloth - Textile Humane Web Text for Ruby
 Summary(pl):	RedCloth - obs³uga formatu tekstowego dla WWW Textile w jêzyku Ruby
 Name:		ruby-redcloth
 Version:	3.0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://rubyforge.org/frs/download.php/6064/RedCloth-%{version}.tar.gz
@@ -11,7 +11,7 @@ URL:		http://www.whytheluckystiff.net/ruby/redcloth/
 BuildRequires:	rpmbuild(macros) >= 1.263
 BuildRequires:	sed >= 4.0
 BuildRequires:	setup.rb
-Requires:	ruby
+Requires:	ruby-modules
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
