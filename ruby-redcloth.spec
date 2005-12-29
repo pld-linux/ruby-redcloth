@@ -8,10 +8,10 @@ Group:		Development/Languages
 Source0:	http://rubyforge.org/frs/download.php/6064/RedCloth-%{version}.tar.gz
 # Source0-md5:	6f076b94e783149adf96102c574a233c
 URL:		http://www.whytheluckystiff.net/ruby/redcloth/
-BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	sed >= 4.0
 BuildRequires:	setup.rb
-Requires:	ruby-modules
+%ruby_mod_ver_requires_eq
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
