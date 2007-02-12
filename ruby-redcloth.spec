@@ -1,5 +1,5 @@
 Summary:	RedCloth - Textile Humane Web Text for Ruby
-Summary(pl.UTF-8):   RedCloth - obsługa formatu tekstowego dla WWW Textile w języku Ruby
+Summary(pl.UTF-8):	RedCloth - obsługa formatu tekstowego dla WWW Textile w języku Ruby
 Name:		ruby-redcloth
 Version:	3.0.4
 Release:	2
