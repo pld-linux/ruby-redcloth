@@ -1,5 +1,5 @@
 Summary:	RedCloth - Textile Humane Web Text for Ruby
-Summary(pl):	RedCloth - obs³uga formatu tekstowego dla WWW Textile w jêzyku Ruby
+Summary(pl.UTF-8):   RedCloth - obsÅ‚uga formatu tekstowego dla WWW Textile w jÄ™zyku Ruby
 Name:		ruby-redcloth
 Version:	3.0.4
 Release:	2
@@ -20,10 +20,10 @@ RedCloth is a module for using Textile in Ruby. Textile is a text
 format. A very simple text format. Another stab at making readable
 text that can be converted to HTML.
 
-%description -l pl
-RedCloth to modu³ do u¿ywania Textile w Rubym. Textile to format
+%description -l pl.UTF-8
+RedCloth to moduÅ‚ do uÅ¼ywania Textile w Rubym. Textile to format
 tekstowy. Bardzo prosty format tekstowy. Kolejny krok do tworzenia
-czytelnego tekstu, który mo¿e byæ konwertowany do HTML-a.
+czytelnego tekstu, ktÃ³ry moÅ¼e byÄ‡ konwertowany do HTML-a.
 
 %prep
 %setup -q -n RedCloth-%{version}
